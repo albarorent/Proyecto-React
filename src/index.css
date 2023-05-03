@@ -39,11 +39,11 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #fff;
+    z-index: 100;
 }
 
 .nav{
     width: 80%;
-    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -66,7 +66,7 @@ p {
 
 .nav__list{
     justify-content: space-between;
-    column-gap: 3rem;
+    column-gap: 1.5rem;
     margin-right: 30px;
     margin-top: 3rem;
 }
@@ -94,14 +94,58 @@ p {
     color: rgb(39, 38, 38);
   }
 
-
-/* Main */
+  /* Main */
 
 .main {
     max-width: 85rem    ;
     width: 100%;
     margin: 0 auto;
   } 
+
+
+  @media (max-width:900px){
+    .nav{
+        width: 100%;
+    }
+  }
+
+  @media (max-width:800px){
+    .header{
+        height: 180px;
+    }
+
+    .nav{
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+    .nav__menu{
+        margin-left: 0;
+    }
+    .nav__list{
+        margin-top: 0;
+    }
+    .nav__logo{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+  }
+
+  @media(max-width:520px){
+    .nav__menu{
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+    .nav__list{
+        column-gap: 0.6rem;
+    }
+    .nav__link{
+        font-size: 1rem;
+    }
+    .nav__item{
+        padding: 0;
+    }
+  }
+
 
 /* Inicio */
 
@@ -202,6 +246,7 @@ p {
     .inicio{
         padding-left: 4rem;
         padding-right: 4rem;
+        margin-top: 12rem;
     }
 
     .inicio__titulo-final{
@@ -214,6 +259,7 @@ p {
 
     .inicio__numero-servicios{
         grid-template-columns: repeat(2,1fr);
+        gap: 3rem;
     }
 
     .inicio__numero-dato{
@@ -237,15 +283,17 @@ p {
     font-size: 3rem;
     line-height: 2.5rem;
     font-weight: 900;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 1.25rem;
     color: rgb(67 56 202/1);
 }
 
 .card__servicio{
-    margin-top: 1rem;
     display: grid;
+    padding: 2rem;
     grid-template-columns: repeat(3,1fr);
-    gap: 1rem;
+    gap: 2rem;
     place-content: center;
     margin-bottom: 50px;
 }
@@ -255,22 +303,38 @@ p {
         padding: 2rem;
     }
     .card__servicio{
-        padding: 2rem;
         grid-template-columns: repeat(2,1fr);
         place-items: center;
     }
 }
 
+.image__service{
+    width: 80%;
+}
+
 @media (max-width:950px){
-    .titulo__servicios{
-        padding: 2rem;
-    }
     .card__servicio{
-        padding: 2rem;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
         place-items: center;
     }
+    .image__service{
+        width: 250px;
+    }
 }
+
+@media (max-width:700px) {
+    .titulo__servicios{
+        margin-top: 12rem;
+    }
+    .card__servicio{
+        grid-template-columns: repeat(1,1fr);
+        padding: 0;
+    }
+    .image__service{
+        width: 300px;
+    }
+}
+
 
 .card__body{
     padding: 2rem;
@@ -285,9 +349,7 @@ p {
     text-align: center;
 }
 
-.image__service{
-    width: 400px;
-}
+
 
 .card__title{
     font-size: 2rem;
@@ -296,6 +358,37 @@ p {
 
 .card__info{
     margin-bottom: 1rem;
+}
+
+
+@media (max-width:500px){
+
+    .inicio__presentacion{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .titulo__servicios{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .card__title{
+        font-size: 1.5rem;
+    }
+
+    .card__info{
+        font-size: 0.9rem;
+    }
+
+    .inicio__numero-dato{
+        width: 120px;
+        align-items: center;
+    }
+
+    .dato__servicio{
+        font-size: 0.8rem;
+    }
 }
 
 .btn__service{
@@ -317,6 +410,12 @@ p {
 
 }
 
+@media (max-width:800px){
+    .nosotros{
+        margin-top: 12rem;
+    }
+}
+
 .nosotros__titulo{
     display: flex;
     justify-content: center;
@@ -326,6 +425,7 @@ p {
 
 .nosotros-title{
     width: 50%;
+    padding: 2rem;
 }
 
 .nosotros__ti{
@@ -353,16 +453,42 @@ p {
 }
 
 .image__nosotros{
+    margin-top: 1rem;
     width: 90%;
+    height: 90%;
 }
 
 .nosotros__mision{
+    padding: 2rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     flex-direction:row ;  
     gap: 6rem;
+}
+
+.nosotros-mision{
+    width: 100%;
+}
+
+
+@media(max-width:1010px){
+    .nosotros__titulo{
+        flex-direction: column;
+    }
+    .nosotros-title{
+        width: 100%;
+    }
+    .nosotros__image{
+        width: 100%;
+    }
+    .image__nosotros{
+        width: 90%;
+    }
+    .nosotros__mision{
+        flex-direction: column;
+    }
 }
 
 .objetivos-nos{
@@ -402,9 +528,6 @@ p {
     font-weight: 200;
 }
 
-.nosotros-mision{
-    width: 100%;
-}
 
 .mision__title{
     font-size: 2.25rem;
@@ -424,6 +547,13 @@ p {
     margin-bottom: 6rem;
 }
 
+@media (max-width:800px){
+    .contacto{
+        margin-top: 5rem;
+    }
+}
+
+
 .contacto__section{
     display: flex;
     flex-direction: column;
@@ -437,6 +567,7 @@ p {
     justify-content: center;
     align-items: center;
     margin-top: 8rem;
+    width: 100%;
 }
 
 .contacto__image{
@@ -450,13 +581,12 @@ p {
 .contacto__formulario{
     padding: 2rem;
     width: 80%;
-    height: 450px;
+    height: 100%;
     margin-top: -100px;
     display: flex;
     position:relative;
     border-radius: 0.5rem;
     background-color: #fff;
-    z-index: 100;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -508,6 +638,7 @@ p {
 }
 
 
+
 .dato__final{
     gap: 2rem;
     display: grid;
@@ -541,6 +672,34 @@ p {
     font-size: 1rem;
     font-weight: 600;
 }
+
+@media(max-width:1250px){
+    .form__datos{
+        flex-direction: column;
+    }
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media(max-width:500px){
+    .form__title{
+        font-size: 1.8rem;
+    }
+    .input__contact{
+        width: 100%;
+    }
+    .btn__contacto{
+        width: 100%;
+    }
+    .dato__final{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+
 
 /* Footer */
 
