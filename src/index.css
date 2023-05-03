@@ -103,11 +103,6 @@ p {
   } 
 
 
-  @media (max-width:900px){
-    .nav{
-        width: 100%;
-    }
-  }
 
   @media (max-width:800px){
     .header{
@@ -143,6 +138,9 @@ p {
     }
     .nav__item{
         padding: 0;
+    }
+    .nav__logo{
+        margin-right: 2rem;
     }
   }
 
